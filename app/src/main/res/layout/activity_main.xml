@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="24dp"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/tvStatusTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Estado del Servicio"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/tvPermissionStatus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Verificando permisos..."
+        android:textColor="#FF0000"
+        app:layout_constraintTop_toBottomOf="@id/tvStatusTitle"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/btnGrantPermission"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Otorgar Permiso de Notificaciones"
+        app:layout_constraintTop_toBottomOf="@id/tvPermissionStatus" />
+
+    <TextView
+        android:id="@+id/tvWebhookTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="URL del Webhook (n8n)"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@id/btnGrantPermission"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <EditText
+        android:id="@+id/etWebhookUrl"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:hint="https://tu-n8n.com/webhook/..."
+        android:inputType="textUri"
+        app:layout_constraintTop_toBottomOf="@id/tvWebhookTitle" />
+
+    <Button
+        android:id="@+id/btnSaveWebhook"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Guardar URL"
+        app:layout_constraintTop_toBottomOf="@id/etWebhookUrl" />
+        
+    <TextView
+        android:id="@+id/tvLogsTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="Instrucciones:"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@id/btnSaveWebhook"
+        app:layout_constraintStart_toStartOf="parent" />
+        
+    <TextView
+        android:id="@+id/tvInstructions"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="1. Otorga el permiso de Acceso a Notificaciones.\n2. Ingresa la URL de tu webhook n8n y presiona Guardar.\n3. Asegúrate de que n8n devuelva texto plano o un JSON con el texto de respuesta.\n4. La app funcionará en segundo plano respondiendo automáticamente."
+        app:layout_constraintTop_toBottomOf="@id/tvLogsTitle" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
